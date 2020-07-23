@@ -1,22 +1,22 @@
-import request from '@/utils/request'
-
+import request from '@/assets/js/utils/request'
+import { apiPrefix } from '@/assets/js/settings'
 export function getRoutes() {
   return request({
-    url: '/vue-element-admin/routes',
+    url: apiPrefix + '/routes',
     method: 'get'
   })
 }
 
 export function getRoles() {
   return request({
-    url: '/vue-element-admin/roles',
+    url: apiPrefix + '/roles',
     method: 'get'
   })
 }
 
 export function addRole(data) {
   return request({
-    url: '/vue-element-admin/role',
+    url: apiPrefix + '/role',
     method: 'post',
     data
   })

@@ -61,8 +61,8 @@
 
 <script>
 import path from 'path'
-import { deepClone } from '@/utils'
-import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/api/role'
+import { deepClone } from '@/assets/js/utils'
+import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/assets/js/api/role'
 
 const defaultRole = {
   key: '',

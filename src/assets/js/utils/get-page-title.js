@@ -1,4 +1,4 @@
-import defaultSettings from '@/settings'
+import defaultSettings from '@/assets/js/settings'
 
 const title = defaultSettings.title || 'Vue Element Admin'
 

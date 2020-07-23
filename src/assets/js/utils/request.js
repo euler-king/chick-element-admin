@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
+import { getToken } from '@/assets/js/utils/auth'
 
 // create an axios instance
 const service = axios.create({
@@ -15,7 +14,8 @@ service.interceptors.request.use(
   config => {
     // do something before request is sent
 
-    if (store.getters.token) {
+    // eslint-disable-next-line no-undef
+    if ($nuxt.$store.getters.token) {
       // let each request carry token
       // ['X-Token'] is a custom headers key
       // please modify it according to the actual situation
@@ -61,7 +61,8 @@ service.interceptors.response.use(
           cancelButtonText: 'Cancel',
           type: 'warning'
         }).then(() => {
-          store.dispatch('user/resetToken').then(() => {
+          // eslint-disable-next-line no-undef
+          $nuxt.$store.dispatch('user/resetToken').then(() => {
             location.reload()
           })
         })

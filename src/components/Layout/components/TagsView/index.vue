@@ -63,7 +63,7 @@ export default {
   },
   mounted() {
     this.initTags()
-    this.addTags()
+    // this.addTags()
   },
   methods: {
     isActive(route) {

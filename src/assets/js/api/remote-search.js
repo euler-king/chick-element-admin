@@ -1,8 +1,8 @@
-import request from '@/utils/request'
-
+import request from '@/assets/js/utils/request'
+import { apiPrefix } from '@/assets/js/settings'
 export function searchUser(name) {
   return request({
-    url: '/vue-element-admin/search/user',
+    url: apiPrefix + '/search/user',
     method: 'get',
     params: { name }
   })
@@ -10,7 +10,7 @@ export function searchUser(name) {
 
 export function transactionList(query) {
   return request({
-    url: '/vue-element-admin/transaction/list',
+    url: apiPrefix + '/transaction/list',
     method: 'get',
     params: query
   })

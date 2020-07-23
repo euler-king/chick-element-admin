@@ -74,9 +74,9 @@
 </template>
 
 <script>
-import { validUsername } from '@/utils/validate'
+import { validUsername } from '@/assets/js/utils/validate'
 import SocialSign from './components/SocialSignin'
-
+import { homePage } from '@/assets/js/settings'
 export default {
   name: 'Login',
   components: { SocialSign },
@@ -158,7 +158,7 @@ export default {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm)
             .then(() => {
-              this.$router.push({ path: this.redirect || '/', query: this.otherQuery })
+              this.$router.push({ path: this.redirect || homePage, query: this.otherQuery })
               this.loading = false
             })
             .catch(() => {

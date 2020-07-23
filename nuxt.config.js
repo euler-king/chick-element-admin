@@ -1,7 +1,7 @@
 import { mockMiddleware } from './src/assets/js/mock'
 const envPrefix = process.env.BIZ_NODE_ENV + '.'
 
-function transProcess (key) {
+function transProcess(key) {
   let value = process.env[key]
   if (process.env[envPrefix + key]) {
     value = process.env[envPrefix + key]
@@ -16,7 +16,9 @@ const fixedHeader = transProcess('fixedHeader') === 'true'
 const sidebarLogo = transProcess('sidebarLogo') === 'true'
 const errorLog = transProcess('errorLog')
 const homePage = transProcess('homePage')
+const loginPage = transProcess('loginPage')
 const mode = transProcess('mode')
+const apiPrefix = transProcess('apiPrefix')
 export default {
   srcDir: 'src/',
   /*
@@ -41,7 +43,9 @@ export default {
     sidebarLogo,
     errorLog,
     homePage,
-    mode
+    mode,
+    loginPage,
+    apiPrefix
   },
 
   vender: [
@@ -81,6 +85,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    { src: '~/plugins/loading', ssr: false },
     { src: '~plugins/element-ui', ssr: true },
     { src: '~plugins/filters' },
     { src: '~plugins/icons' },
@@ -96,9 +101,9 @@ export default {
   */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module'
     // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module'
+    // '@nuxtjs/stylelint-module'
   ],
   /*
   ** Nuxt.js modules

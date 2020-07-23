@@ -1,6 +1,6 @@
-import { login, logout, getInfo } from '@/api/user'
-import { getToken, setToken, removeToken } from '@/utils/auth'
-import router, { resetRouter } from '@/router'
+import { login, logout, getInfo } from '@/assets/js/api/user'
+import { getToken, setToken, removeToken } from '@/assets/js/utils/auth'
+import router, { resetRouter } from '@/assets/js/router/nuxt'
 
 const state = {
   token: getToken(),

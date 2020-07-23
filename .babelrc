@@ -1,5 +1,13 @@
 {
   "presets":["es2015"],
+  "plugins": [["component", [
+    {
+      "libraryName": "element-ui",
+      "styleLibraryName": "theme-chalk"
+    },
+    "transform-async-to-generator",
+    "transform-runtime"
+  ]]],
   "env": {
     "test": {
       "presets": [

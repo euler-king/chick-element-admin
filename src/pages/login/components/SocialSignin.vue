@@ -12,7 +12,7 @@
 </template>
 
 <script>
-// import openWindow from '@/utils/open-window'
+// import openWindow from '@/assets/js/utils/open-window'
 
 export default {
   name: 'SocialSignin',

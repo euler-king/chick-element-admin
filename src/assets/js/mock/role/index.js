@@ -1,3 +1,4 @@
+import { apiPrefix } from '../../settings'
 const Mock = require('mockjs')
 const { deepClone } = require('../utils')
 const { asyncRoutes, constantRoutes } = require('./routes.js')
@@ -38,7 +39,7 @@ const roles = [
 module.exports = [
   // mock get all routes form server
   {
-    url: '/vue-element-admin/routes',
+    url: apiPrefix + '/routes',
     type: 'get',
     response: _ => {
       return {
@@ -50,7 +51,7 @@ module.exports = [
 
   // mock get all roles form server
   {
-    url: '/vue-element-admin/roles',
+    url: apiPrefix + '/roles',
     type: 'get',
     response: _ => {
       return {
@@ -62,7 +63,7 @@ module.exports = [
 
   // add role
   {
-    url: '/vue-element-admin/role',
+    url: apiPrefix + '/role',
     type: 'post',
     response: {
       code: 20000,
@@ -74,7 +75,7 @@ module.exports = [
 
   // update role
   {
-    url: '/vue-element-admin/role/[A-Za-z0-9]',
+    url: apiPrefix + '/role/[A-Za-z0-9]',
     type: 'put',
     response: {
       code: 20000,
@@ -86,7 +87,7 @@ module.exports = [
 
   // delete role
   {
-    url: '/vue-element-admin/role/[A-Za-z0-9]',
+    url: apiPrefix + '/role/[A-Za-z0-9]',
     type: 'delete',
     response: {
       code: 20000,

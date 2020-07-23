@@ -35,5 +35,11 @@ module.exports = {
 
   mode: process.env.mode,
 
-  homePage: process.env.homePage
+  isSpa: process.env.mode === 'spa',
+
+  homePage: process.env.homePage,
+
+  loginPage: process.env.loginPage,
+
+  apiPrefix: process.env.apiPrefix
 }

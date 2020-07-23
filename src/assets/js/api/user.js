@@ -1,8 +1,8 @@
-import request from '@/utils/request'
-
+import request from '@/assets/js/utils/request'
+import { apiPrefix } from '@/assets/js/settings'
 export function login(data) {
   return request({
-    url: '/vue-element-admin/user/login',
+    url: apiPrefix + '/user/login',
     method: 'post',
     data
   })
@@ -10,15 +10,15 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/vue-element-admin/user/info',
-    method: 'get',
+    url: apiPrefix + '/user/info',
+    method: 'post',
     params: { token }
   })
 }
 
 export function logout() {
   return request({
-    url: '/vue-element-admin/user/logout',
+    url: apiPrefix + '/user/logout',
     method: 'post'
   })
 }

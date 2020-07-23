@@ -67,8 +67,8 @@
 </template>
 
 <script>
-import permission from '@/directive/permission/index.js' // 权限判断指令
-import checkPermission from '@/utils/permission' // 权限判断函数
+import permission from '@/assets/js/directive/permission/index.js' // 权限判断指令
+import checkPermission from '@/assets/js/utils/permission' // 权限判断函数
 import SwitchRoles from './components/SwitchRoles'
 
 export default {

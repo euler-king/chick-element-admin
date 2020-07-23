@@ -1,4 +1,4 @@
-import request from '@/utils/request'
+import request from '@/assets/js/utils/request'
 
 export function getToken() {
   return request({

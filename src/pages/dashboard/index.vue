@@ -6,10 +6,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import adminDashboard from './admin'
-import editorDashboard from './editor'
+import adminDashboard from '@/components/Dashboard/admin'
+import editorDashboard from '@/components/Dashboard/editor'
 
 export default {
+  layout: 'chick',
   name: 'Dashboard',
   components: { adminDashboard, editorDashboard },
   data() {

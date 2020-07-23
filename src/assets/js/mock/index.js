@@ -1,6 +1,8 @@
 const Mock = require('mockjs')
 const { param2Obj } = require('./utils')
-
+const express = require('express')
+const bodyParser = require('body-parser')
+const { apiPrefix } = require('../settings')
 const user = require('./user')
 const role = require('./role')
 const article = require('./article')
@@ -54,7 +56,47 @@ function mockXHR() {
   }
 }
 
+function createMethod(req, res) {
+  let result = null
+  const { body, type, path, query } = req
+
+  var respond = {}
+  for (const i of mocks) {
+    if (i.url.indexOf(path) !== -1) {
+      respond = i.response
+      break
+    }
+  }
+  if (respond instanceof Function) {
+    // https://expressjs.com/en/4x/api.html#req
+    result = respond({
+      method: type,
+      body: body,
+      query: query
+    })
+  } else {
+    result = respond
+  }
+  res.send(Mock.mock(result))
+}
+
+function mockMiddleware() {
+  const app = express()
+  app.use(bodyParser.json()) // 数据JSON类型
+  for (const mock of mocks) {
+    var url = mock.url.substring(apiPrefix.length, mock.url.length)
+
+    if (mock.type === 'get') {
+      app.get(url, (req, res) => createMethod(req, res))
+    } else {
+      app.post(url, (req, res) => createMethod(req, res))
+    }
+  }
+  return { path: apiPrefix, handler: app }
+}
+
 module.exports = {
   mocks,
-  mockXHR
+  mockXHR,
+  mockMiddleware
 }

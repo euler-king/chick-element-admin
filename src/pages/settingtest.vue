@@ -5,7 +5,7 @@
 <script>
 import defaultSettings from '@/assets/js/settings'
 export default {
-  mounted () {
+  mounted() {
     console.log('defaultSettings', defaultSettings)
   }
 }
