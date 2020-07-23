@@ -1,16 +1,51 @@
+const envPrefix = process.env.BIZ_NODE_ENV + '.'
 
+function transProcess (key) {
+  let value = process.env[key]
+  if (process.env[envPrefix + key]) {
+    value = process.env[envPrefix + key]
+  }
+  return value
+}
+const baseUrl = transProcess('BIZ_BASE_URL')
+const title = transProcess('title')
+const showSettings = transProcess('showSettings') === 'true'
+const tagsView = transProcess('tagsView') === 'true'
+const fixedHeader = transProcess('fixedHeader') === 'true'
+const sidebarLogo = transProcess('sidebarLogo') === 'true'
+const errorLog = transProcess('errorLog')
+const homePage = transProcess('homePage')
+const mode = transProcess('mode')
 export default {
   srcDir: 'src/',
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'universal',
+  mode,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
   target: 'server',
+
+  env: {
+    NODE_ENV: process.env.NODE_ENV,
+    BIZ_NODE_ENV: process.env.BIZ_NODE_ENV,
+    baseUrl,
+    title,
+    showSettings,
+    tagsView,
+    fixedHeader,
+    sidebarLogo,
+    errorLog,
+    homePage,
+    mode
+  },
+
+  vender: [
+    'element-ui', 'axios'
+  ],
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -78,6 +113,20 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: [/^element-ui/]
+    transpile: [/^element-ui/],
+    babel: {
+      presets ({ isServer }) {
+        return [
+          [
+            require.resolve('@nuxt/babel-preset-app'),
+            // require.resolve('@nuxt/babel-preset-app-edge'), // For nuxt-edge users
+            {
+              buildTarget: isServer ? 'server' : 'client',
+              corejs: { version: 3 }
+            }
+          ]
+        ]
+      }
+    }
   }
 }
