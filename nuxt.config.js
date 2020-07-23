@@ -1,3 +1,4 @@
+import { mockMiddleware } from './src/assets/js/mock'
 const envPrefix = process.env.BIZ_NODE_ENV + '.'
 
 function transProcess (key) {
@@ -61,18 +62,29 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  serverMiddleware: [mockMiddleware()],
+
+  router: {
+    middleware: ['permission']
+  },
   /*
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'normalize.css/normalize.css',
+    'element-ui/lib/theme-chalk/index.css',
+    '~assets/scss/index.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '@/plugins/element-ui'
+    { src: '~plugins/element-ui', ssr: true },
+    { src: '~plugins/filters' },
+    { src: '~plugins/icons' },
+    { src: '~plugins/error-log' }
   ],
   /*
   ** Auto import components
