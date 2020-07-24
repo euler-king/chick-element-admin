@@ -126,8 +126,9 @@
 
 <script>
 import BackToTop from '@/components/BackToTop'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'BackToTopDemo',
   components: { BackToTop },
   data() {

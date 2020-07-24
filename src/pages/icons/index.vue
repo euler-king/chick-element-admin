@@ -43,8 +43,9 @@
 import clipboard from '@/assets/js/utils/clipboard'
 import svgIcons from './svg-icons'
 import elementIcons from './element-icons'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'Icons',
   data() {
     return {

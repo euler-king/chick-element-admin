@@ -12,8 +12,9 @@
 
 <script>
 import Dropzone from '@/components/Dropzone'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DropzoneDemo',
   components: { Dropzone },
   methods: {

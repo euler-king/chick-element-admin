@@ -9,8 +9,9 @@
 
 <script>
 import UploadExcelComponent from '@/components/UploadExcel/index.vue'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'UploadExcel',
   components: { UploadExcelComponent },
   data() {

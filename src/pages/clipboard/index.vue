@@ -20,8 +20,9 @@
 <script>
 import clip from '@/assets/js/utils/clipboard' // use clipboard directly
 import clipboard from '@/assets/js/directive/clipboard/index.js' // use clipboard by v-directive
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'ClipboardDemo',
   directives: {
     clipboard

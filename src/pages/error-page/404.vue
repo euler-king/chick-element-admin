@@ -21,9 +21,9 @@
 </template>
 
 <script>
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'Page404',
   computed: {
     message() {

@@ -13,8 +13,9 @@
 
 <script>
 import Tinymce from '@/components/Tinymce'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'TinymceDemo',
   components: { Tinymce },
   data() {

@@ -41,5 +41,7 @@ module.exports = {
 
   loginPage: process.env.loginPage,
 
-  apiPrefix: process.env.apiPrefix
+  apiPrefix: process.env.apiPrefix,
+
+  chickLayoutName: process.env.chickLayoutName
 }

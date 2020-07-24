@@ -11,3 +11,9 @@
   </div>
 </template>
 
+<script>
+import { chickLayoutName } from '@/assets/js/settings'
+export default {
+  layout: chickLayoutName
+}
+</script>

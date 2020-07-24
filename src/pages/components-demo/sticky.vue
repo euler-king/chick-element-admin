@@ -100,8 +100,9 @@
 
 <script>
 import Sticky from '@/components/Sticky'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'StickyDemo',
   components: { Sticky },
   data() {

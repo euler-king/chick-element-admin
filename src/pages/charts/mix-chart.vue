@@ -6,8 +6,9 @@
 
 <script>
 import Chart from '@/components/Charts/MixChart'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'MixChart',
   components: { Chart }
 }

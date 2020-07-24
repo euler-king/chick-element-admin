@@ -67,22 +67,22 @@
 </template>
 
 <script>
-import permission from '@/assets/js/directive/permission/index.js' // 权限判断指令
-import checkPermission from '@/assets/js/utils/permission' // 权限判断函数
+// import permission from '@/assets/js/directive/permission/index.js' // 权限判断指令
+// import checkPermission from '@/assets/js/utils/permission' // 权限判断函数
 import SwitchRoles from './components/SwitchRoles'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'DirectivePermission',
   components: { SwitchRoles },
-  directives: { permission },
+  // directives: { permission },
   data() {
     return {
       key: 1 // 为了能每次切换权限的时候重新初始化指令
     }
   },
   methods: {
-    checkPermission,
+    // checkPermission,
     handleRolesChange() {
       this.key++
     }

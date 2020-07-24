@@ -12,8 +12,9 @@
 <script>
 import DndList from '@/components/DndList'
 import { fetchList } from '@/assets/js/api/article'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DndListDemo',
   components: { DndList },
   data() {

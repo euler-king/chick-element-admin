@@ -3,3 +3,9 @@
     <el-alert :closable="false" title="menu 2" />
   </div>
 </template>
+<script>
+import { chickLayoutName } from '@/assets/js/settings'
+export default {
+  layout: chickLayoutName
+}
+</script>

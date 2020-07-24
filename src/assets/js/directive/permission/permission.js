@@ -2,7 +2,8 @@ import store from '@/store'
 
 function checkPermission(el, binding) {
   const { value } = binding
-  const roles = store.getters && store.getters.roles
+  // eslint-disable-next-line no-undef
+  const roles = $nuxt.$store.getters && $nuxt.$store.getters.roles
 
   if (value && value instanceof Array) {
     if (value.length > 0) {

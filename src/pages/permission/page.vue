@@ -6,9 +6,9 @@
 
 <script>
 import SwitchRoles from './components/SwitchRoles'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'PagePermission',
   components: { SwitchRoles },
   methods: {

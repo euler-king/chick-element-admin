@@ -79,7 +79,7 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/documentation-index',
+    path: '/documentation-home',
     component: Layout,
     children: [
       {
@@ -91,7 +91,7 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/guide-index',
+    path: '/guide-home',
     component: Layout,
     redirect: '/guide',
     children: [
@@ -125,7 +125,7 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/permission-index',
+    path: '/permission-home',
     component: Layout,
     redirect: '/permission/page',
     alwaysShow: true, // will always show the root menu
@@ -167,11 +167,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/icon-index',
+    path: '/icon-home',
     component: Layout,
     children: [
       {
-        path: '/icon',
+        path: '/icons',
         component: () => import('@/pages/icons/index'),
         name: 'Icons',
         meta: { title: 'Icons', icon: 'icon', noCache: true }
@@ -218,11 +218,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/tab-index',
+    path: '/tab-home',
     component: Layout,
     children: [
       {
-        path: 'tab',
+        path: '/tab',
         component: () => import('@/pages/tab/index'),
         name: 'Tab',
         meta: { title: 'Tab', icon: 'tab' }
@@ -241,13 +241,13 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: '401',
+        path: '/error-page/401',
         component: () => import('@/pages/error-page/401'),
         name: 'Page401',
         meta: { title: '401', noCache: true }
       },
       {
-        path: '404',
+        path: '/error-page/404',
         component: () => import('@/pages/error-page/404'),
         name: 'Page404',
         meta: { title: '404', noCache: true }
@@ -256,11 +256,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/error-log',
+    path: '/error-log-home',
     component: Layout,
     children: [
       {
-        path: 'log',
+        path: '/error-log',
         component: () => import('@/pages/error-log/index'),
         name: 'ErrorLog',
         meta: { title: 'Error Log', icon: 'bug' }
@@ -279,25 +279,25 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: 'export-excel',
+        path: '/excel/export-excel',
         component: () => import('@/pages/excel/export-excel'),
         name: 'ExportExcel',
         meta: { title: 'Export Excel' }
       },
       {
-        path: 'export-selected-excel',
+        path: '/excel/select-excel',
         component: () => import('@/pages/excel/select-excel'),
         name: 'SelectExcel',
         meta: { title: 'Export Selected' }
       },
       {
-        path: 'export-merge-header',
+        path: '/excel/merge-header',
         component: () => import('@/pages/excel/merge-header'),
         name: 'MergeHeader',
         meta: { title: 'Merge Header' }
       },
       {
-        path: 'upload-excel',
+        path: '/excel/upload-excel',
         component: () => import('@/pages/excel/upload-excel'),
         name: 'UploadExcel',
         meta: { title: 'Upload Excel' }
@@ -306,15 +306,15 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/zip',
+    path: '/zip-home',
     component: Layout,
-    redirect: '/zip/download',
+    redirect: '/zip',
     alwaysShow: true,
     name: 'Zip',
     meta: { title: 'Zip', icon: 'zip' },
     children: [
       {
-        path: 'download',
+        path: '/zip',
         component: () => import('@/pages/zip/index'),
         name: 'ExportZip',
         meta: { title: 'Export Zip' }
@@ -323,12 +323,12 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/pdf',
+    path: '/pdf-home',
     component: Layout,
-    redirect: '/pdf/index',
+    redirect: '/pdf',
     children: [
       {
-        path: 'index',
+        path: '/pdf',
         component: () => import('@/pages/pdf/index'),
         name: 'PDF',
         meta: { title: 'PDF', icon: 'pdf' }
@@ -342,11 +342,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/theme',
+    path: '/theme-home',
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: '/theme',
         component: () => import('@/pages/theme/index'),
         name: 'Theme',
         meta: { title: 'Theme', icon: 'theme' }
@@ -355,11 +355,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/clipboard',
+    path: '/clipboard-home',
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: '/clipboard',
         component: () => import('@/pages/clipboard/index'),
         name: 'ClipboardDemo',
         meta: { title: 'Clipboard', icon: 'clipboard' }

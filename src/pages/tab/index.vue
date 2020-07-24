@@ -14,8 +14,9 @@
 
 <script>
 import TabPane from './components/TabPane'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'Tab',
   components: { TabPane },
   data() {

@@ -27,8 +27,9 @@
 <script>
 import ImageCropper from '@/components/ImageCropper'
 import PanThumb from '@/components/PanThumb'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'AvatarUploadDemo',
   components: { ImageCropper, PanThumb },
   data() {

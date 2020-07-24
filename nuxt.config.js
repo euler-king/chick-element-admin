@@ -23,6 +23,8 @@ const homePage = transProcess('homePage')
 const loginPage = transProcess('loginPage')
 const mode = transProcess('mode')
 const apiPrefix = transProcess('apiPrefix')
+const chickLayoutName = transProcess('chickLayoutName')
+
 export default {
   srcDir: 'src/',
   /*
@@ -49,7 +51,8 @@ export default {
     homePage,
     mode,
     loginPage,
-    apiPrefix
+    apiPrefix,
+    chickLayoutName
   },
 
   vender: [
@@ -96,6 +99,7 @@ export default {
     { src: '~plugins/icons' },
     { src: '~plugins/error-log' },
     { src: '~plugins/routes' },
+    { src: '~plugins/directive-permission' },
     { src: '~plugins/driver', ssr: false }
   ],
   /*

@@ -64,8 +64,9 @@
 <script>
 import { fetchList } from '@/assets/js/api/article'
 import Sortable from 'sortablejs'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DragTable',
   filters: {
     statusFilter(status) {
@@ -91,7 +92,7 @@ export default {
       newList: []
     }
   },
-  created() {
+  mounted() {
     this.getList()
   },
   methods: {

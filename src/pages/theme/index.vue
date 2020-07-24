@@ -76,7 +76,9 @@
 import { toggleClass } from '@/assets/js/utils'
 import '@/assets/css/custom-theme/index.css' // the theme changed version element-ui css
 
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'Theme',
   data() {
     return {

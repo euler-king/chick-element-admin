@@ -15,8 +15,9 @@
 <script>
 import FixedThead from './components/FixedThead'
 import UnfixedThead from './components/UnfixedThead'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DynamicTable',
   components: { FixedThead, UnfixedThead }
 }

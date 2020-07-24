@@ -37,8 +37,9 @@
 
 <script>
 import { fetchList } from '@/assets/js/api/article'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'ExportZip',
   data() {
     return {
@@ -50,6 +51,9 @@ export default {
   },
   created() {
     this.fetchData()
+  },
+  mounted() {
+    this.layout = 'default'
   },
   methods: {
     async fetchData() {

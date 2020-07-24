@@ -36,9 +36,9 @@
 
 <script>
 import errGif from '@/assets/images/401_images/401.gif'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'Page401',
   data() {
     return {

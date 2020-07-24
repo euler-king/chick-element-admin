@@ -79,8 +79,9 @@
 
 <script>
 import { fetchList } from '@/assets/js/api/article'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'InlineEditTable',
   filters: {
     statusFilter(status) {

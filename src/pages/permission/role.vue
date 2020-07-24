@@ -63,7 +63,7 @@
 import path from 'path'
 import { deepClone } from '@/assets/js/utils'
 import { getRoutes, getRoles, addRole, deleteRole, updateRole } from '@/assets/js/api/role'
-
+import { chickLayoutName } from '@/assets/js/settings'
 const defaultRole = {
   key: '',
   name: '',
@@ -72,7 +72,7 @@ const defaultRole = {
 }
 
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   data() {
     return {
       role: Object.assign({}, defaultRole),

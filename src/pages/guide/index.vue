@@ -13,9 +13,9 @@
 
 <script>
 import steps from './steps'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'Guide',
   asyncData() {
     return {

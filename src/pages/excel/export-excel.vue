@@ -51,8 +51,9 @@ import { parseTime } from '@/assets/js/utils'
 import FilenameOption from './components/FilenameOption'
 import AutoWidthOption from './components/AutoWidthOption'
 import BookTypeOption from './components/BookTypeOption'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'ExportExcel',
   components: { FilenameOption, AutoWidthOption, BookTypeOption },
   data() {

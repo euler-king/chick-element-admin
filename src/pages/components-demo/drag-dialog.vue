@@ -18,8 +18,9 @@
 
 <script>
 import elDragDialog from '@/assets/js/directive/el-drag-dialog' // base on element-ui
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DragDialogDemo',
   directives: { elDragDialog },
   data() {

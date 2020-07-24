@@ -31,7 +31,6 @@ export default ({ app, store, req }) => {
             // note: roles must be a object array! such as: ['admin'] or ,['developer','editor']
             app.store.dispatch('user/getInfo').then(res => {
               const { roles } = res
-
               // generate accessible routes map based on roles
               app.store.dispatch('permission/generateRoutes', roles).then(accessRoutes => {
                 addRoutes(router, accessRoutes)

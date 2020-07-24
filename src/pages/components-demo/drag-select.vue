@@ -14,8 +14,9 @@
 
 <script>
 import ElDragSelect from '@/components/DragSelect' // base on element-ui
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DragSelectDemo',
   components: { ElDragSelect },
   data() {

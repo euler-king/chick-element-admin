@@ -6,8 +6,9 @@
 
 <script>
 import Chart from '@/components/Charts/LineMarker'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'LineChart',
   components: { Chart }
 }

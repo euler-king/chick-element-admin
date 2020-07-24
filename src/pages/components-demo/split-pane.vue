@@ -25,8 +25,9 @@
 
 <script>
 import splitPane from 'vue-splitpane'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'SplitpaneDemo',
   components: { splitPane },
   methods: {

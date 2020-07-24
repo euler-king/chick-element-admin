@@ -10,9 +10,9 @@
 
 <script>
 import DropdownMenu from '@/components/Share/DropdownMenu'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'Documentation',
   components: { DropdownMenu },
   asyncData() {

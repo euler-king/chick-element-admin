@@ -151,7 +151,7 @@ import { fetchList, fetchPv, createArticle, updateArticle } from '@/assets/js/ap
 import waves from '@/assets/js/directive/waves' // waves directive
 import { parseTime } from '@/assets/js/utils'
 import Pagination from '@/components/Pagination' // secondary package based on el-pagination
-
+import { chickLayoutName } from '@/assets/js/settings'
 const calendarTypeOptions = [
   { key: 'CN', display_name: 'China' },
   { key: 'US', display_name: 'USA' },
@@ -166,6 +166,7 @@ const calendarTypeKeyValue = calendarTypeOptions.reduce((acc, cur) => {
 }, {})
 
 export default {
+  layout: chickLayoutName,
   name: 'ComplexTable',
   components: { Pagination },
   directives: { waves },

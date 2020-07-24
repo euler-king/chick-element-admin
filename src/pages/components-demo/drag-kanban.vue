@@ -7,8 +7,9 @@
 </template>
 <script>
 import Kanban from '@/components/Kanban'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'DragKanbanDemo',
   components: {
     Kanban

@@ -59,8 +59,9 @@
 <script>
 import { fetchList } from '@/assets/js/api/article'
 import Pagination from '@/components/Pagination' // Secondary package based on el-pagination
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'ArticleList',
   components: { Pagination },
   filters: {

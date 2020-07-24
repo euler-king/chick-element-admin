@@ -48,8 +48,9 @@
 <script>
 import { fetchList } from '@/assets/js/api/article'
 import { parseTime } from '@/assets/js/utils'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'MergeHeader',
   data() {
     return {

@@ -8,9 +8,9 @@
 import { mapGetters } from 'vuex'
 import adminDashboard from '@/components/Dashboard/admin'
 import editorDashboard from '@/components/Dashboard/editor'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'Dashboard',
   components: { adminDashboard, editorDashboard },
   data() {

@@ -53,8 +53,9 @@
 
 <script>
 import countTo from 'vue-count-to'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
+  layout: chickLayoutName,
   name: 'CountToDemo',
   components: { countTo },
   data() {

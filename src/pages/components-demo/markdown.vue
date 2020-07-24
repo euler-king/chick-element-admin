@@ -51,7 +51,7 @@
 
 <script>
 import MarkdownEditor from '@/components/MarkdownEditor'
-
+import { chickLayoutName } from '@/assets/js/settings'
 const content = `
 **This is test**
 
@@ -61,6 +61,7 @@ const content = `
 
 `
 export default {
+  layout: chickLayoutName,
   name: 'MarkdownDemo',
   components: { MarkdownEditor },
   data() {

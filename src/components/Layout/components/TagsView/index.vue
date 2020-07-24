@@ -53,6 +53,10 @@ export default {
       this.addTags()
       this.moveToCurrentTag()
     },
+    routes() {
+      this.addTags()
+      this.moveToCurrentTag()
+    },
     visible(value) {
       if (value) {
         document.body.addEventListener('click', this.closeMenu)
@@ -63,7 +67,6 @@ export default {
   },
   mounted() {
     this.initTags()
-    // this.addTags()
   },
   methods: {
     isActive(route) {
@@ -120,7 +123,9 @@ export default {
       const { name } = this.$route
       if (name) {
         var currRoute = this.filteRoute(this.routes, this.$route.path)
-        this.$store.dispatch('tagsView/addView', currRoute)
+        if (currRoute) {
+          this.$store.dispatch('tagsView/addView', currRoute)
+        }
       }
       return false
     },

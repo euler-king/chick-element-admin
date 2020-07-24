@@ -18,9 +18,9 @@
 <script>
 import ErrorA from './components/ErrorTestA'
 import ErrorB from './components/ErrorTestB'
-
+import { chickLayoutName } from '@/assets/js/settings'
 export default {
-  layout: 'chick',
+  layout: chickLayoutName,
   name: 'ErrorLog',
   components: { ErrorA, ErrorB }
 }
