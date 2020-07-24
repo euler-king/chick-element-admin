@@ -102,10 +102,25 @@ export default {
         }
       }
     },
+    filteRoute(routes, searchPath) {
+      for (let i = 0; i < routes.length; i++) {
+        const route = routes[i]
+        if (route.path === searchPath) {
+          return route
+        }
+        if (route.children) {
+          const tag = this.filteRoute(route.children, searchPath)
+          if (tag != null) {
+            return tag
+          }
+        }
+      }
+    },
     addTags() {
       const { name } = this.$route
       if (name) {
-        this.$store.dispatch('tagsView/addView', this.$route)
+        var currRoute = this.filteRoute(this.routes, this.$route.path)
+        this.$store.dispatch('tagsView/addView', currRoute)
       }
       return false
     },
