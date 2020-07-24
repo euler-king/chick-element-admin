@@ -3,14 +3,14 @@ import { apiPrefix } from '@/assets/js/settings'
 export function getRoutes() {
   return request({
     url: apiPrefix + '/routes',
-    method: 'get'
+    method: 'post'
   })
 }
 
 export function getRoles() {
   return request({
     url: apiPrefix + '/roles',
-    method: 'get'
+    method: 'post'
   })
 }
 

@@ -31,7 +31,7 @@ for (let i = 0; i < count; i++) {
 module.exports = [
   {
     url: apiPrefix + '/article/list',
-    type: 'get',
+    type: 'post',
     response: config => {
       const { importance, type, title, page = 1, limit = 20, sort } = config.query
 
@@ -60,7 +60,7 @@ module.exports = [
 
   {
     url: apiPrefix + '/article/detail',
-    type: 'get',
+    type: 'post',
     response: config => {
       const { id } = config.query
       for (const article of List) {
@@ -76,7 +76,7 @@ module.exports = [
 
   {
     url: apiPrefix + '/article/pv',
-    type: 'get',
+    type: 'post',
     response: _ => {
       return {
         code: 20000,

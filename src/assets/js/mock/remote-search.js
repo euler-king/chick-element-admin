@@ -1,5 +1,5 @@
 const Mock = require('mockjs')
-
+import { apiPrefix } from '../settings'
 const NameList = []
 const count = 100
 
@@ -14,7 +14,7 @@ module.exports = [
   // username search
   {
     url: '/vue-element-admin/search/user',
-    type: 'get',
+    type: 'post',
     response: config => {
       const { name } = config.query
       const mockNameList = NameList.filter(item => {
@@ -30,8 +30,8 @@ module.exports = [
 
   // transaction list
   {
-    url: '/vue-element-admin/transaction/list',
-    type: 'get',
+    url: apiPrefix + '/transaction/list',
+    type: 'post',
     response: _ => {
       return {
         code: 20000,

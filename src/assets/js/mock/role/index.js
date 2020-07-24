@@ -40,7 +40,7 @@ module.exports = [
   // mock get all routes form server
   {
     url: apiPrefix + '/routes',
-    type: 'get',
+    type: 'post',
     response: _ => {
       return {
         code: 20000,
@@ -52,7 +52,7 @@ module.exports = [
   // mock get all roles form server
   {
     url: apiPrefix + '/roles',
-    type: 'get',
+    type: 'post',
     response: _ => {
       return {
         code: 20000,

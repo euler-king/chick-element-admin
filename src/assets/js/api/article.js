@@ -3,7 +3,7 @@ import { apiPrefix } from '@/assets/js/settings'
 export function fetchList(query) {
   return request({
     url: apiPrefix + '/article/list',
-    method: 'get',
+    method: 'post',
     params: query
   })
 }
@@ -11,7 +11,7 @@ export function fetchList(query) {
 export function fetchArticle(id) {
   return request({
     url: apiPrefix + '/article/detail',
-    method: 'get',
+    method: 'post',
     params: { id }
   })
 }
@@ -19,7 +19,7 @@ export function fetchArticle(id) {
 export function fetchPv(pv) {
   return request({
     url: apiPrefix + '/article/pv',
-    method: 'get',
+    method: 'post',
     params: { pv }
   })
 }

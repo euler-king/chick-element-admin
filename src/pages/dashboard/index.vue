@@ -23,6 +23,15 @@ export default {
       'roles'
     ])
   },
+  watch: {
+    roles() {
+      if (this.roles.includes('admin')) {
+        this.currentRole = 'adminDashboard'
+      } else {
+        this.currentRole = 'editorDashboard'
+      }
+    }
+  },
   created() {
     if (!this.roles.includes('admin')) {
       this.currentRole = 'editorDashboard'

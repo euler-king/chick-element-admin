@@ -1,5 +1,7 @@
 <template>
-  <Layout />
+  <div id="app">
+    <Layout />
+  </div>
 </template>
 
 <script>

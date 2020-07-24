@@ -3,7 +3,7 @@ import { apiPrefix } from '@/assets/js/settings'
 export function searchUser(name) {
   return request({
     url: apiPrefix + '/search/user',
-    method: 'get',
+    method: 'post',
     params: { name }
   })
 }
@@ -11,7 +11,7 @@ export function searchUser(name) {
 export function transactionList(query) {
   return request({
     url: apiPrefix + '/transaction/list',
-    method: 'get',
+    method: 'post',
     params: query
   })
 }

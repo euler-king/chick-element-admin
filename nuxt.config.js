@@ -1,6 +1,10 @@
 import { mockMiddleware } from './src/assets/js/mock'
 const envPrefix = process.env.BIZ_NODE_ENV + '.'
+const path = require('path')
 
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 function transProcess(key) {
   let value = process.env[key]
   if (process.env[envPrefix + key]) {
@@ -78,14 +82,15 @@ export default {
   css: [
     'normalize.css/normalize.css',
     'element-ui/lib/theme-chalk/index.css',
-    '~assets/scss/index.scss'
+    { src: '@/assets/scss/element-variables.scss', lang: 'scss' },
+    { src: '@/assets/scss/index.scss', lang: 'scss' }
   ],
   /*
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/loading', ssr: false },
+    { src: '~plugins/loading', ssr: false },
     { src: '~plugins/element-ui', ssr: true },
     { src: '~plugins/filters' },
     { src: '~plugins/icons' },
@@ -131,8 +136,22 @@ export default {
   */
   build: {
     transpile: [/^element-ui/],
+    extend(config, ctx) {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
+      svgRule.exclude = [resolve('src/assets/icons/svg')]
+
+      // Includes /assets/icons/svg for svg-sprite-loader
+      config.module.rules.push({
+        test: /\.svg$/,
+        include: [resolve('src/assets/icons/svg')],
+        loader: 'svg-sprite-loader',
+        options: {
+          symbolId: 'icon-[name]'
+        }
+      })
+    },
     babel: {
-      presets ({ isServer }) {
+      presets({ isServer }) {
         return [
           [
             require.resolve('@nuxt/babel-preset-app'),
