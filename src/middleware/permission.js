@@ -7,15 +7,16 @@ import { homePage, loginPage, apiPrefix } from '@/assets/js/settings'
 
 const whiteList = [loginPage, '/auth-redirect'] // no redirect whitelist
 
-export default function({ store, route, req, res, redirect }) {
+export default function({ app, store, route, req, res, redirect }) {
   const path = getRequestPath(req, route)
   if (path.indexOf(apiPrefix) !== -1) {
     return
   }
-  const token = getToken(req)
+  const token = getToken(app)
   console.log('token', token)
   console.log('path', path)
   if (token) {
+    store.dispatch('user/setToken', token)
     if (path === loginPage) {
       // if is logged in, redirect to the home page
       redirect({ path: homePage })

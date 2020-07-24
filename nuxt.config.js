@@ -74,7 +74,7 @@ export default {
   serverMiddleware: [mockMiddleware()],
 
   router: {
-    middleware: ['permission']
+    // middleware: ['permission']
   },
   /*
   ** Global CSS
@@ -95,6 +95,7 @@ export default {
     { src: '~plugins/filters' },
     { src: '~plugins/icons' },
     { src: '~plugins/error-log' },
+    { src: '~plugins/routes' },
     { src: '~plugins/driver', ssr: false }
   ],
   /*
@@ -119,7 +120,12 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content',
+
+    'cookie-universal-nuxt',
+
+    // With options
+    ['cookie-universal-nuxt', { alias: 'cookiz' }]
   ],
   /*
   ** Axios module configuration

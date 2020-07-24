@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { MessageBox, Message } from 'element-ui'
-import { getToken } from '@/assets/js/utils/auth'
+// import { getToken } from '@/assets/js/utils/auth'
 
 // create an axios instance
 const service = axios.create({
@@ -15,12 +15,14 @@ service.interceptors.request.use(
     // do something before request is sent
 
     // eslint-disable-next-line no-undef
-    if ($nuxt.$store.getters.token) {
-      // let each request carry token
-      // ['X-Token'] is a custom headers key
-      // please modify it according to the actual situation
-      config.headers['X-Token'] = getToken()
-    }
+    // if ($nuxt.$store.getters.token) {
+    //   // let each request carry token
+    //   // ['X-Token'] is a custom headers key
+    //   // please modify it according to the actual situation
+    //   // eslint-disable-next-line no-undef
+    //   config.headers['X-Token'] = $nuxt.$store.getters.token
+    // }
+    config.headers['X-Token'] = 'admin-token'
     return config
   },
   error => {
