@@ -23,6 +23,7 @@
 <script>
 
 export default {
+  layout: 'chick',
   name: 'Page404',
   computed: {
     message() {

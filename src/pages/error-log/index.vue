@@ -20,6 +20,7 @@ import ErrorA from './components/ErrorTestA'
 import ErrorB from './components/ErrorTestB'
 
 export default {
+  layout: 'chick',
   name: 'ErrorLog',
   components: { ErrorA, ErrorB }
 }

@@ -38,6 +38,7 @@
 import errGif from '@/assets/images/401_images/401.gif'
 
 export default {
+  layout: 'chick',
   name: 'Page401',
   data() {
     return {

@@ -72,6 +72,7 @@ const defaultRole = {
 }
 
 export default {
+  layout: 'chick',
   data() {
     return {
       role: Object.assign({}, defaultRole),

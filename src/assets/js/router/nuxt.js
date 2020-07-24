@@ -51,17 +51,17 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '/auth-redirect',
+    path: '/login/auth-redirect',
     component: () => import('@/pages/login/auth-redirect'),
     hidden: true
   },
   {
-    path: '/404',
+    path: 'error-page/404',
     component: () => import('@/pages/error-page/404'),
     hidden: true
   },
   {
-    path: '/401',
+    path: 'error-page/401',
     component: () => import('@/pages/error-page/401'),
     hidden: true
   },
@@ -79,11 +79,11 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/documentation',
+    path: '/documentation-index',
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: '/documentation',
         component: () => import('@/pages/documentation/index'),
         name: 'Documentation',
         meta: { title: 'Documentation', icon: 'documentation', affix: true }
@@ -91,12 +91,12 @@ export const constantRoutes = [
     ]
   },
   {
-    path: '/guide',
+    path: '/guide-index',
     component: Layout,
-    redirect: '/guide/index',
+    redirect: '/guide',
     children: [
       {
-        path: 'index',
+        path: '/guide',
         component: () => import('@/pages/guide/index'),
         name: 'Guide',
         meta: { title: 'Guide', icon: 'guide', noCache: true }
@@ -106,11 +106,11 @@ export const constantRoutes = [
   {
     path: '/profile',
     component: Layout,
-    redirect: '/profile/index',
+    redirect: '/profile',
     hidden: true,
     children: [
       {
-        path: 'index',
+        path: '/profile',
         component: () => import('@/pages/profile/index'),
         name: 'Profile',
         meta: { title: 'Profile', icon: 'user', noCache: true }
@@ -125,7 +125,7 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/permission',
+    path: '/permission-index',
     component: Layout,
     redirect: '/permission/page',
     alwaysShow: true, // will always show the root menu
@@ -137,7 +137,7 @@ export const asyncRoutes = [
     },
     children: [
       {
-        path: 'page',
+        path: '/permission/page',
         component: () => import('@/pages/permission/page'),
         name: 'PagePermission',
         meta: {
@@ -146,7 +146,7 @@ export const asyncRoutes = [
         }
       },
       {
-        path: 'directive',
+        path: '/permission/directive',
         component: () => import('@/pages/permission/directive'),
         name: 'DirectivePermission',
         meta: {
@@ -155,7 +155,7 @@ export const asyncRoutes = [
         }
       },
       {
-        path: 'role',
+        path: '/permission/role',
         component: () => import('@/pages/permission/role'),
         name: 'RolePermission',
         meta: {
@@ -167,11 +167,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/icon',
+    path: '/icon-index',
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: '/icon',
         component: () => import('@/pages/icons/index'),
         name: 'Icons',
         meta: { title: 'Icons', icon: 'icon', noCache: true }
@@ -218,11 +218,11 @@ export const asyncRoutes = [
   },
 
   {
-    path: '/tab',
+    path: '/tab-index',
     component: Layout,
     children: [
       {
-        path: 'index',
+        path: 'tab',
         component: () => import('@/pages/tab/index'),
         name: 'Tab',
         meta: { title: 'Tab', icon: 'tab' }

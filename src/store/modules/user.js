@@ -1,6 +1,6 @@
 import { login, logout, getInfo } from '@/assets/js/api/user'
 import { getToken, setToken, removeToken } from '@/assets/js/utils/auth'
-import router, { resetRouter } from '@/assets/js/router/nuxt'
+import router, { resetRouter, addRoutes } from '@/assets/js/router/nuxt'
 
 const state = {
   token: getToken(),
@@ -116,7 +116,7 @@ const actions = {
     // generate accessible routes map based on roles
     const accessRoutes = await dispatch('permission/generateRoutes', roles, { root: true })
     // dynamically add accessible routes
-    router.addRoutes(accessRoutes)
+    addRoutes(router, accessRoutes)
 
     // reset visited views and cached views
     dispatch('tagsView/delAllViews', null, { root: true })

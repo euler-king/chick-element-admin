@@ -94,7 +94,8 @@ export default {
     { src: '~plugins/element-ui', ssr: true },
     { src: '~plugins/filters' },
     { src: '~plugins/icons' },
-    { src: '~plugins/error-log' }
+    { src: '~plugins/error-log' },
+    { src: '~plugins/driver', ssr: false }
   ],
   /*
   ** Auto import components

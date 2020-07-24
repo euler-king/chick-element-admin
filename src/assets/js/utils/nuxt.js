@@ -21,6 +21,9 @@ export function getRequestPath(req, route) {
   // 在服务端
   if (isServer) {
     path = req.originalUrl
+    if (path.indexOf('?') !== -1) {
+      path = path.substring(0, path.indexOf('?'))
+    }
   }
   // 在客户端判读是否需要登陆
   if (isClient) {

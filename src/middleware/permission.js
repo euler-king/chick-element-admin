@@ -14,6 +14,7 @@ export default function({ store, route, req, res, redirect }) {
   }
   const token = getToken(req)
   console.log('token', token)
+  console.log('path', path)
   if (token) {
     if (path === loginPage) {
       // if is logged in, redirect to the home page
